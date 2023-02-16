@@ -9,6 +9,7 @@ public class Wall implements Structure {
         this.blocks = blocks;
     }
 
+    // zwraca dowolny element o podanym kolorze
     @Override
     public Optional<Block> findBlockByColor(String color) {
         return blocks.stream()
@@ -16,6 +17,7 @@ public class Wall implements Structure {
                 .findFirst();
     }
 
+    // zwraca wszystkie elementy z danego materiału
     @Override
     public List<Block> findBlocksByMaterial(String material) {
         return blocks.stream()
@@ -23,6 +25,7 @@ public class Wall implements Structure {
                 .collect(Collectors.toList());
     }
 
+    //zwraca liczbę wszystkich elementów tworzących strukturę
     @Override
     public int count() {
         return blocks.size();
